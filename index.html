@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Equations &amp; Inequalities Test Prep</title>
+<title>Equations and Inequalities Extra Credit</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
 /* Layout: the test question in a Canvas-style card on the left; on the right, the class drill that fits
@@ -163,7 +163,7 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--blue-b);outline
 
 <div class="app">
   <header class="top">
-    <div class="brand"><span class="brand-t">Equations &amp; Inequalities</span></div>
+    <div class="brand"><span class="brand-t">Equations and Inequalities Extra Credit</span></div>
     <div class="top-r">
       <span class="score" id="score"></span>
       <button class="btn" id="newBtn" type="button" title="Same kind of question, new numbers">New numbers</button>
@@ -764,13 +764,13 @@ const MS_FORM={
   /* "button only": show just the form's Submit button. Open the drill with #setup at the end of its address to adjust. */
   submitButton:{x:7,y:532,width:515,height:56}
 };
-const DRILL_NAME='Equations Test Prep';
+const DRILL_NAME='Equations and Inequalities Extra Credit';
 function checkCode(r,t){const x=(r*37+t*11+23)%676;return String.fromCharCode(65+x%26)+String.fromCharCode(65+Math.floor(x/26));}
 function formLink(){
   const n=firstTry(),f=finished();
   /* Keep this line no longer than the Write It, Graph It drill's. A longer line makes the form's
      answer box taller, which pushes Submit out of the cropped window (submitButton below). */
-  const text=n+' of '+TOTAL+' correct on the first try ('+f+' finished) — '+DRILL_NAME+' — check '+checkCode(n,f);
+  const text=n+' of '+TOTAL+' correct — '+DRILL_NAME+' — check '+checkCode(n,f);
   return MS_FORM.url+'&'+MS_FORM.score+'='+n+(MS_FORM.results?'&'+MS_FORM.results+'='+encodeURIComponent(text):'');
 }
 function openTurnIn(){S.ti=true;$('#main').hidden=true;$('#strip').hidden=true;$('#tipage').hidden=false;$('#turnBtn').textContent='Back to the problems';$('#newBtn').hidden=true;renderTurnIn();}
@@ -797,7 +797,7 @@ document.addEventListener('keydown',e=>{
   const q=cur();if(q.done&&q.phase==='done'&&(e.key==='Enter'||e.key==='n'||e.key==='N')){e.preventDefault();goNext();}
 });
 if(location.hash==='#setup'){
-  const sample=MS_FORM.url+'&'+MS_FORM.score+'='+TOTAL+(MS_FORM.results?'&'+MS_FORM.results+'='+encodeURIComponent(TOTAL+' of '+TOTAL+' correct on the first try ('+TOTAL+' finished) — '+DRILL_NAME+' — check XX'):'')+'&embed=true',b0=MS_FORM.submitButton||{x:0,y:500,width:528,height:90};
+  const sample=MS_FORM.url+'&'+MS_FORM.score+'='+TOTAL+(MS_FORM.results?'&'+MS_FORM.results+'='+encodeURIComponent(TOTAL+' of '+TOTAL+' correct — '+DRILL_NAME+' — check XX'):'')+'&embed=true',b0=MS_FORM.submitButton||{x:0,y:500,width:528,height:90};
   const d=document.createElement('div');d.className='cal';
   d.innerHTML='<div class="cal-in"><h2>Set up: show only the Submit button</h2><p>Drag the sliders until the form’s <b>Submit</b> button sits inside the blue box. Nothing is turned in unless you press Submit.</p>'
     +'<p><button class="btn" type="button" id="cal-all">Show the whole form</button> <span style="color:#64748b;font-weight:500">If Submit is greyed out, look here for a question marked in red. That question needs fixing in Microsoft Forms.</span></p>'
